@@ -2,4 +2,12 @@
     <string name="app_name">Project and Thesis Management System</string>
     <string name="Details_person_name">Details_name</string>
     <string name="Type_name">type_name</string>
+    <string name="adviser_prompt">Choose an Advisor</string>
+    <string name="technology_prompt">Choose a technology</string>
+
+    <string-array name="technology_arrays">
+        <item>Laravel</item>
+        <item>Spring</item>
+        <item>Django</item>
+    </string-array>
 </resources>

@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialSearchView materialSearchView;
     private Button mOpenButton;
     private Button mSignUp;
+    private Button mSubmitWork;
     private TextView mTeachers;
     private TextView mStudents;
     private TextView mProjects;
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         materialSearchView=findViewById(R.id.search_view);
         mOpenButton=findViewById(R.id.buttonId);
         mScrollView=findViewById(R.id.scroll);
+        mSubmitWork=findViewById(R.id.submit_work);
+        mSubmitWork.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SubmitActivity.class);
+                startActivity(intent);
+            }
+        });
         apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
 
         intiName();
