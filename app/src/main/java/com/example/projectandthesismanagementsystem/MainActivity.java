@@ -12,6 +12,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projectandthesismanagementsystem.configs.PrefConfig;
 import com.example.projectandthesismanagementsystem.models.Name;
 import com.example.projectandthesismanagementsystem.retrofit.ApiClient;
 import com.example.projectandthesismanagementsystem.retrofit.ApiInterface;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView mProjects;
     private ScrollView mScrollView;
 
+    public static PrefConfig prefConfig;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
+        prefConfig=new PrefConfig(this);
 
         intiName();
 

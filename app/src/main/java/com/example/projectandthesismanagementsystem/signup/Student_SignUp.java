@@ -64,13 +64,18 @@ public class Student_SignUp extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(Student_SignUp.this,"Student Registered!",Toast.LENGTH_LONG).show();
+                    if(response.body().getResponse().equals("ok")){
+                        MainActivity.prefConfig.writeLoginStatus(true);
+                        MainActivity.prefConfig.writeUser(response.body().getUser());
+                        MainActivity.prefConfig.writeInsti(response.body().getInstitution());
+                        MainActivity.prefConfig.writeUserId(response.body().getUserId());
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(Student_SignUp.this,"Failde! "+t.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(Student_SignUp.this,"Failed! "+t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -66,7 +66,12 @@ public class Teachers_SignUp extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(Teachers_SignUp.this,"Teacher Registered",Toast.LENGTH_LONG).show();
+                    if(response.body().getResponse().equals("ok")){
+                        MainActivity.prefConfig.writeLoginStatus(true);
+                        MainActivity.prefConfig.writeUser(response.body().getUser());
+                        MainActivity.prefConfig.writeInsti(response.body().getInstitution());
+                        MainActivity.prefConfig.writeUserId(response.body().getUserId());
+                    }
                 }
             }
 

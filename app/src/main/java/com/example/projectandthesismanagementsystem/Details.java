@@ -3,6 +3,8 @@ package com.example.projectandthesismanagementsystem;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +29,8 @@ public class Details extends AppCompatActivity {
 
     ProgressDialog mProgressDialog;
 
+    private RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ public class Details extends AppCompatActivity {
         mEmail=findViewById(R.id.student_deatils_email);
         mPhone=findViewById(R.id.student_deatils_phone);
         mType=findViewById(R.id.Student_details_type);
+        recyclerView=findViewById(R.id.detail_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRegLay=findViewById(R.id.reg_layout);
         mProgressDialog=new ProgressDialog(this);
         mProgressDialog.setMessage("Loading...");

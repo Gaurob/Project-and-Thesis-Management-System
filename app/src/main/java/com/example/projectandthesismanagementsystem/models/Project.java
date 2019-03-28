@@ -26,6 +26,17 @@ public class Project {
     @SerializedName("accepted")
     private Boolean Accepted;
 
+    public String getComment() {
+        return Comment;
+    }
+
+    public void setComment(String comment) {
+        Comment = comment;
+    }
+
+    @SerializedName("comment")
+    private String Comment;
+
     public String getTitle() {
         return Title;
     }
