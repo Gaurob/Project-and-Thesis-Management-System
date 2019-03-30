@@ -40,5 +40,11 @@ public interface ApiInterface {
     @GET("get_teachers.php")
     Call<ArrayList<Project>> getProjectList(@Query("type") String type,@Query("user_id") int id);
 
+    @GET ("submit_project.php")
+    Call<User> submitProject (@Query("title") String title,@Query("adviser") String adviser,@Query("description") String description,@Query("platform") String platform,
+                                       @Query("technology") String technology,@Query("github") String github,@Query("s_id") int S_ID,@Query("t_id") int T_ID);
+
+
+
 
 }

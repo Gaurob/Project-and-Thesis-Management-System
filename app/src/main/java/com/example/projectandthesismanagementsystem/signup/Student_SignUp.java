@@ -1,5 +1,6 @@
 package com.example.projectandthesismanagementsystem.signup;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,6 @@ public class Student_SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_student__sign_up);
 
 
-        Id=findViewById(R.id.student_id);
         Name=findViewById(R.id.student_name);
         Institution=findViewById(R.id.student_institution);
         Dept=findViewById(R.id.student_dept);
@@ -69,6 +69,8 @@ public class Student_SignUp extends AppCompatActivity {
                         MainActivity.prefConfig.writeUser(response.body().getUser());
                         MainActivity.prefConfig.writeInsti(response.body().getInstitution());
                         MainActivity.prefConfig.writeUserId(response.body().getUserId());
+                        Toast.makeText(Student_SignUp.this,"Registered!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Student_SignUp.this,MainActivity.class));
                     }
                 }
             }

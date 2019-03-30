@@ -10,7 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projectandthesismanagementsystem.adapters.ProjectAdapter;
+import com.example.projectandthesismanagementsystem.models.Project;
 import com.example.projectandthesismanagementsystem.models.User;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,8 +47,10 @@ public class Details extends AppCompatActivity {
         mEmail=findViewById(R.id.student_deatils_email);
         mPhone=findViewById(R.id.student_deatils_phone);
         mType=findViewById(R.id.Student_details_type);
-        recyclerView=findViewById(R.id.detail_list);
+
+        recyclerView=findViewById(R.id.main_detail_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         mRegLay=findViewById(R.id.reg_layout);
         mProgressDialog=new ProgressDialog(this);
         mProgressDialog.setMessage("Loading...");
@@ -77,6 +83,8 @@ public class Details extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     mUser=response.body();
+
+                    Toast.makeText(Details.this,mUser.getProjects().get(0).getStudentName(),Toast.LENGTH_LONG).show();
                     init(type);
                 }
             }
@@ -92,6 +100,8 @@ public class Details extends AppCompatActivity {
     private void init(String type) {
         mProgressDialog.dismiss();
 
+
+
         mName.setText(mUser.getUserName());
         mInstitution.setText(mUser.getInstitution());
         mDept.setText(mUser.getDepartment());
@@ -101,5 +111,7 @@ public class Details extends AppCompatActivity {
         }
         mEmail.setText(mUser.getEmail());
         mPhone.setText(mUser.getCell());
+        ProjectAdapter adapter=new ProjectAdapter(mUser.getProjects(),Details.this);
+        recyclerView.setAdapter(adapter);
     }
 }

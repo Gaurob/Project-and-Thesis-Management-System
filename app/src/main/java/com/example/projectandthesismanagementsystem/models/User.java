@@ -2,6 +2,8 @@ package com.example.projectandthesismanagementsystem.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class User {
 
     @SerializedName("user_id")
@@ -22,6 +24,16 @@ public class User {
     private String Cell;
     @SerializedName("department")
     private String Department;
+    @SerializedName("projects")
+    List<Project> Projects;
+
+    public List<Project> getProjects() {
+        return Projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        Projects = projects;
+    }
 
     public String getDepartment() {
         return Department;

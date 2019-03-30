@@ -1,5 +1,6 @@
 package com.example.projectandthesismanagementsystem;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.projectandthesismanagementsystem.models.Name;
+import com.example.projectandthesismanagementsystem.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +42,22 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
     private Integer teacher_id=null;
     private String technology=null;
     private String platform=null;
+    private String adviser=null;
 
     //Lists
     ArrayList<Name> mNames=new ArrayList<>();
+    List<String>list= new ArrayList<>();
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
+
+        mProgressDialog=new ProgressDialog(this);
+        mProgressDialog.setMessage("Loading...");
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.show();
 
         mDescription=findViewById(R.id.project_description);
         mTitle=findViewById(R.id.project_title);
@@ -59,13 +69,13 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
         mIos=findViewById(R.id.radio_ios);
         mIos.setOnClickListener(this);
         mAdvisor=findViewById(R.id.spinner_adviser);
-        mTechnology=findViewById(R.id.spinner_adviser);
+        mTechnology=findViewById(R.id.spinner_technology);
         mPlatform=findViewById(R.id.radioPlatform);
 
         mSubmitButton=findViewById(R.id.submit_btn);
+        mSubmitButton.setOnClickListener(this);
         init();
 
-        mSubmitButton.setOnClickListener(this);
     }
 
     private void init() {
@@ -73,8 +83,8 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
         call.enqueue(new Callback<ArrayList<Name>>() {
             @Override
             public void onResponse(Call<ArrayList<Name>> call, Response<ArrayList<Name>> response) {
+                mProgressDialog.dismiss();
                 mNames=response.body();
-                List<String>list=new ArrayList<>();
                 for(int i=0; i<mNames.size(); i++){
                     list.add(mNames.get(i).toString());
                 }
@@ -86,6 +96,7 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onFailure(Call<ArrayList<Name>> call, Throwable t) {
+                mProgressDialog.dismiss();
                 Toast.makeText(SubmitActivity.this,"Database Failed! "+t.getMessage(),Toast.LENGTH_LONG).show();
 
             }
@@ -94,7 +105,10 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
         mAdvisor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                teacher_id=position;
+                teacher_id=new Integer(-1);
+                teacher_id=mNames.get(position).getTeacherID();
+                adviser=new String();
+                adviser=mNames.get(position).getName();
             }
 
             @Override
@@ -107,6 +121,7 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
         mTechnology.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                technology=new String();
                 technology=parent.getItemAtPosition(position).toString();
             }
 
@@ -120,21 +135,51 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
 
     private void submitForm() {
 
+        mProgressDialog.show();
+
         int platforms=mPlatform.getCheckedRadioButtonId();
         mRadioButton=findViewById(platforms);
         platform= (String) mRadioButton.getText();
+        if(!platform.equals("Web")){
+            technology="";
+        }
         String desc=mDescription.getText().toString();
         String title=mTitle.getText().toString();
         String git=mGithubID.getText().toString();
+        int student_id=MainActivity.prefConfig.readUserId();
 
-        if(teacher_id==null || technology==null || platform==null || desc.equals("") || title.equals("") || git.equals("") ){
-            Toast.makeText(SubmitActivity.this,"Every field must be selected!",Toast.LENGTH_LONG).show();
-            return;
+        if(adviser==null || teacher_id==null ||  platform==null || desc.equals("") || title.equals("") || git.equals("") ){
+            if(technology==null && platform.equals("Web")){
+                Toast.makeText(SubmitActivity.this,"Every field must be selected!",Toast.LENGTH_LONG).show();
+                mProgressDialog.dismiss();
+                return;
+            }
+
         }
 
+        Call<User> call=MainActivity.apiInterface.submitProject(title,adviser,desc,platform,technology,git,student_id,teacher_id);
 
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                mProgressDialog.dismiss();
+                if(response.isSuccessful()){
+                    if(response.body().getResponse().equals("ok")){
+                        Toast.makeText(SubmitActivity.this,"Project Submitted ",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(SubmitActivity.this,"Project Submission Error!",Toast.LENGTH_SHORT).show();
 
+                    }
+                }
+            }
 
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                mProgressDialog.dismiss();
+                Toast.makeText(SubmitActivity.this,"Submission Failed!",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override
@@ -142,12 +187,19 @@ public class SubmitActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.submit_btn:
                 submitForm();
+                break;
             case R.id.radio_web:
+                Toast.makeText(SubmitActivity.this,"Web",Toast.LENGTH_SHORT).show();
                 mTechnology.setVisibility(View.VISIBLE);
+                break;
             case R.id.radio_android:
+                Toast.makeText(SubmitActivity.this,"Android",Toast.LENGTH_SHORT).show();
                 mTechnology.setVisibility(View.GONE);
+                break;
             case R.id.radio_ios:
+                Toast.makeText(SubmitActivity.this,"Ios",Toast.LENGTH_SHORT).show();
                 mTechnology.setVisibility(View.GONE);
+                break;
         }
     }
 }

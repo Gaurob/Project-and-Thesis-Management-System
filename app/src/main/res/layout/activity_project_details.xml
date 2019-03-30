@@ -1,9 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProjectDetailsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/deta"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Project Details"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"            android:textAlignment="center"
+                android:layout_marginTop="14dp"
+                />
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="20dp"
+                app:cardElevation="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/name_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Student Name : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_student_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ashik "
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/name_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/advisor_name_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adviser : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_advisor_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="enam"
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/advisor_name_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/title_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_project_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@+id/title_id"
+                            android:text=""
+                            android:textSize="20dp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/description_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Description : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/description_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/platform_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Platform : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_platform"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/platform_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/Technology_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Technology : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_Technology"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/Technology_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/github_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Github ID : "
+                            android:textSize="20dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/project_dtls_Github"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp"
+                            android:layout_toRightOf="@+id/github_id"
+                            android:layout_marginTop="10dp"
+                            />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:text="Project Summary :"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.CardView
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/first_seg"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="First Segment : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+
+                            android:layout_marginRight="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="50dp"
+                            android:src="@drawable/thumb_down_white_18dp"
+                            android:background="@android:color/holo_green_light"
+                            android:id="@+id/first"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/first_seg"
+                        android:id="@+id/second_seg"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="Second Segment : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:layout_marginRight="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="50dp"
+                            android:src="@drawable/thumb_down_white_18dp"
+                            android:background="@android:color/holo_green_light"
+                            android:id="@+id/second"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/second_seg"
+                        android:id="@+id/third_seg"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="Third Segment : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:layout_marginRight="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="50dp"
+                            android:src="@drawable/thumb_down_white_18dp"
+                            android:background="@android:color/holo_green_light"
+                            android:id="@+id/third"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/third_seg"
+                        android:id="@+id/comment"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/conmment_name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:text="Comment : "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                            android:layout_toRightOf="@+id/conmment_name"
+                            android:layout_marginLeft="50dp"
+                            android:src="@drawable/thumb_down_white_18dp"
+                            android:id="@+id/project_dtls_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</ScrollView>
