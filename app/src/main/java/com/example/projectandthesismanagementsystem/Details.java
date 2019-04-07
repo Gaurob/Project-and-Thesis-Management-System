@@ -83,8 +83,6 @@ public class Details extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     mUser=response.body();
-
-                    Toast.makeText(Details.this,mUser.getProjects().get(0).getStudentName(),Toast.LENGTH_LONG).show();
                     init(type);
                 }
             }

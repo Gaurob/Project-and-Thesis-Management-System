@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
         mTeachers=findViewById(R.id.teachers);
         mStudents=findViewById(R.id.students);
         mProjects=findViewById(R.id.projects);
+        mProjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Project Selected",Toast.LENGTH_SHORT).show();
+            }
+        });
         mSignUp=findViewById(R.id.main_signup_btn);
         mSignIn=findViewById(R.id.main_signin_btn);
         mSingOut=findViewById(R.id.main_signout_btn);
@@ -83,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,SubmitActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SignInActivity.class);
                 startActivity(intent);
             }
         });
@@ -145,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 mTeachers.setTextColor(Color.WHITE);
                 mProjects.setTextColor(Color.RED);
                 mStudents.setTextColor(Color.WHITE);
+
             }
         });
 

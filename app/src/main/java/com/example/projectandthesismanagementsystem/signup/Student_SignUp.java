@@ -55,6 +55,13 @@ public class Student_SignUp extends AppCompatActivity {
         String conPass=Confim_Password.getText().toString();
         String phone=Phone.getText().toString();
 
+        if(name.equals("") || insti.equals("") || dept.equals("") || reg.equals("") || email.equals("") ||pass.equals("") ||
+                phone.equals("")){
+            Toast.makeText(Student_SignUp.this, "Every field must be filled!",Toast.LENGTH_LONG).show();
+            return;
+
+        }
+
         if(!pass.equals(conPass)){
             Toast.makeText(Student_SignUp.this,"Passwords Don't Match",Toast.LENGTH_LONG).show();
             return;

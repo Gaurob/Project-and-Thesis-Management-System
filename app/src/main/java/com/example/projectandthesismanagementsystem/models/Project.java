@@ -5,6 +5,11 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Project implements Serializable {
+
+    @SerializedName("project_id")
+    private int Project_id;
+    @SerializedName("teacher_id")
+    private int Teacher_id;
     @SerializedName("title")
     private String Title;
     @SerializedName("description")
@@ -20,13 +25,30 @@ public class Project implements Serializable {
     @SerializedName("github")
     private String Github;
     @SerializedName("first_seg")
-    private Boolean First_seg;
+    private int First_seg;
     @SerializedName("second_seg")
-    private Boolean Seconde_Seg;
+    private int Seconde_Seg;
     @SerializedName("third_seg")
-    private Boolean Third_Seg;
+    private int Third_Seg;
     @SerializedName("accepted")
-    private Boolean Accepted;
+    private int Accepted;
+
+    public int getTeacher_id() {
+        return Teacher_id;
+    }
+
+    public void setTeacher_id(int teacher_id) {
+        Teacher_id = teacher_id;
+    }
+
+
+    public int getProject_id() {
+        return Project_id;
+    }
+
+    public void setProject_id(int project_id) {
+        Project_id = project_id;
+    }
 
     public String getComment() {
         return Comment;
@@ -95,35 +117,35 @@ public class Project implements Serializable {
         Github = github;
     }
 
-    public Boolean getFirst_seg() {
+    public int getFirst_seg() {
         return First_seg;
     }
 
-    public void setFirst_seg(Boolean first_seg) {
+    public void setFirst_seg(int first_seg) {
         First_seg = first_seg;
     }
 
-    public Boolean getSeconde_Seg() {
+    public int getSeconde_Seg() {
         return Seconde_Seg;
     }
 
-    public void setSeconde_Seg(Boolean seconde_Seg) {
+    public void setSeconde_Seg(int seconde_Seg) {
         Seconde_Seg = seconde_Seg;
     }
 
-    public Boolean getThird_Seg() {
+    public int getThird_Seg() {
         return Third_Seg;
     }
 
-    public void setThird_Seg(Boolean third_Seg) {
+    public void setThird_Seg(int third_Seg) {
         Third_Seg = third_Seg;
     }
 
-    public Boolean getAccepted() {
+    public int getAccepted() {
         return Accepted;
     }
 
-    public void setAccepted(Boolean accepted) {
+    public void setAccepted(int accepted) {
         Accepted = accepted;
     }
 }

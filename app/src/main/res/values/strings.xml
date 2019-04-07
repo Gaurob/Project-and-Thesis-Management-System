@@ -5,6 +5,7 @@
     <string name="adviser_prompt">Choose an Advisor</string>
     <string name="technology_prompt">Choose a technology</string>
     <string name="EXTRA_PROJECT">put_extra_project_object</string>
+    <string name="UPDATE_OBJECT">update_object</string>
 
     <string-array name="technology_arrays">
         <item>Laravel</item>
