@@ -159,6 +159,10 @@ public class MainActivity extends AppCompatActivity {
                 mTeachers.setTextColor(Color.WHITE);
                 mProjects.setTextColor(Color.RED);
                 mStudents.setTextColor(Color.WHITE);
+                materialSearchView.clearAll();
+                materialSearchView.clearHistory();
+                materialSearchView.openSearch();
+                getName("Projects");
 
             }
         });
@@ -211,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailIntent=new Intent(MainActivity.this,Details.class);
                 detailIntent.putExtra(getString(R.string.Details_person_name),suggestion);
                 detailIntent.putExtra(getString(R.string.Type_name),type);
+                if(!type.equals("Projects"))
                 startActivity(detailIntent);
             }
         });
