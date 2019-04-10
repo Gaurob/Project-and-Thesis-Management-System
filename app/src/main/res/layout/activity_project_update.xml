@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectDetailsActivity">
+    tools:context=".ProjectUpdateActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -49,10 +49,10 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_student_name"
+                            android:id="@+id/project_dtls_student_name_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Ashik"
+                            android:text="Ashik "
                             android:textSize="20dp"
                             android:layout_toRightOf="@+id/name_id"
                             android:layout_marginTop="10dp"
@@ -74,7 +74,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_advisor_id"
+                            android:id="@+id/project_dtls_advisor_id_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="enam"
@@ -98,7 +98,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_project_title"
+                            android:id="@+id/project_dtls_project_title_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -121,7 +121,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_description"
+                            android:id="@+id/project_dtls_description_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -146,7 +146,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_platform"
+                            android:id="@+id/project_dtls_platform_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -171,7 +171,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_Technology"
+                            android:id="@+id/project_dtls_Technology_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -196,7 +196,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/project_dtls_Github"
+                            android:id="@+id/project_dtls_Github_u"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -226,30 +226,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <RelativeLayout
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/p_comment"
+                        android:id="@+id/accepted_seg"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
-
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            android:text="Accepted: "
+                            android:text="Accepted : "
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
-                        <ImageView
+                        <RadioButton
+                            android:checked="false"
                             android:layout_marginRight="50dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="50dp"
-                            android:src="@drawable/thumb_down_white_18dp"
-                            android:background="@android:color/holo_green_light"
-                            android:id="@+id/project_dtls_Accepted"
+                            android:id="@+id/update_accepted"
                             android:layout_width="30dp"
                             android:layout_height="30dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_marginTop="10dp"
-                        android:layout_below="@+id/p_comment"
+                        android:layout_below="@+id/accepted_seg"
                         android:id="@+id/first_seg"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -259,14 +256,12 @@
                             android:text="First Segment : "
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
-                        <ImageView
-
+                        <RadioButton
+                            android:checked="false"
                             android:layout_marginRight="50dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="50dp"
-                            android:src="@drawable/thumb_down_white_18dp"
-                            android:background="@android:color/holo_green_light"
-                            android:id="@+id/first"
+                            android:id="@+id/update_first"
                             android:layout_width="30dp"
                             android:layout_height="30dp" />
                     </RelativeLayout>
@@ -283,13 +278,12 @@
                             android:text="Second Segment : "
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
-                        <ImageView
+                        <RadioButton
+                            android:checked="false"
                             android:layout_marginRight="50dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="50dp"
-                            android:src="@drawable/thumb_down_white_18dp"
-                            android:background="@android:color/holo_green_light"
-                            android:id="@+id/second"
+                            android:id="@+id/update_second"
                             android:layout_width="30dp"
                             android:layout_height="30dp" />
                     </RelativeLayout>
@@ -306,13 +300,12 @@
                             android:text="Third Segment : "
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
-                        <ImageView
+                        <RadioButton
+                            android:checked="false"
                             android:layout_marginRight="50dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="50dp"
-                            android:src="@drawable/thumb_down_white_18dp"
-                            android:background="@android:color/holo_green_light"
-                            android:id="@+id/third"
+                            android:id="@+id/update_third"
                             android:layout_width="30dp"
                             android:layout_height="30dp" />
                     </RelativeLayout>
@@ -330,24 +323,24 @@
                             android:text="Comment : "
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
-                        <TextView
+                        <EditText
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
                             android:layout_toRightOf="@+id/conmment_name"
                             android:layout_marginLeft="50dp"
                             android:src="@drawable/thumb_down_white_18dp"
-                            android:id="@+id/project_dtls_comment"
+                            android:id="@+id/update_comment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </RelativeLayout>
+
                     <Button
-                        android:visibility="gone"
-                        android:id="@+id/update_btn_detail"
+                        android:id="@+id/update_btn"
                         android:layout_marginTop="10dp"
                         android:layout_below="@+id/comment"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:text="Update"
+                        android:text="Commit Update"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </RelativeLayout>

@@ -16,13 +16,6 @@ public interface ApiInterface {
     @GET("login.php")
     Call<User> performLogin(@Query("email") String email, @Query("password") String password);
 
-    @GET("set_appointment.php")
-    Call<User> setAppointment(@Query("teacher_id") int teacher_id,@Query("student_id") int student_id,
-                              @Query("subject") String subject,@Query("description") String description,
-                              @Query("message") String message,@Query("date") String date, @Query("time") String time);
-    @GET("request_appointment.php")
-    Call<User> requestAppointment(@Query("teacher_id") int teacher_id, @Query("student_id") int student_id,
-                                  @Query("subject") String subject, @Query("description") String description);
 
     @GET ("register_teach.php")
     Call<User> performRegisterTeacher (@Query("email") String email,@Query("password") String password,@Query("name") String name,
@@ -43,6 +36,9 @@ public interface ApiInterface {
     @GET ("submit_project.php")
     Call<User> submitProject (@Query("title") String title,@Query("adviser") String adviser,@Query("description") String description,@Query("platform") String platform,
                                        @Query("technology") String technology,@Query("github") String github,@Query("s_id") int S_ID,@Query("t_id") int T_ID);
+    @GET ("update_project.php")
+    Call<User> updateProject (@Query("project_id") int projectId,@Query("first_seg") Boolean f,@Query("second_seg") Boolean s,@Query("third_seg") Boolean t,
+                              @Query("accepted") Boolean accepted,@Query("project_comment") String comment);
 
 
 

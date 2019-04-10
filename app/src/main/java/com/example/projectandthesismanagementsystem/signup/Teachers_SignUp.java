@@ -59,6 +59,12 @@ public class Teachers_SignUp extends AppCompatActivity {
         String email=mEmail.getText().toString();
         String pass=mPassword.getText().toString();
         String confirmpass=mConfirmPassword.getText().toString();
+
+        if(name.equals("") || insti.equals("") || dept.equals("") || email.equals("") ||pass.equals("")){
+            Toast.makeText(Teachers_SignUp.this, "Every field must be filled!",Toast.LENGTH_LONG).show();
+            return;
+
+        }
         if(!pass.equals(confirmpass)){
             return;
         }
