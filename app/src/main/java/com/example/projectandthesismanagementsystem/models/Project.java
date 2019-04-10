@@ -2,7 +2,9 @@ package com.example.projectandthesismanagementsystem.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Project {
+import java.io.Serializable;
+
+public class Project implements Serializable {
     @SerializedName("title")
     private String Title;
     @SerializedName("description")

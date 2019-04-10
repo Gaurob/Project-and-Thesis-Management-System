@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,78 +8,82 @@
     tools:context=".Details">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:padding="5dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cr_1"
-                    android:layout_gravity="center"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="@android:color/darker_gray"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="@android:color/darker_gray"
+                    app:cardElevation="10dp">
+
                     <LinearLayout
-                        android:padding="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:padding="20dp">
+
                         <TextView
-                            android:textColor="@android:color/white"
                             android:id="@+id/Student_details_type"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Student Details"
-                            android:gravity="center"
-                            android:textSize="35sp"
                             android:layout_gravity="center_horizontal"
-                            />
+                            android:gravity="center"
+                            android:text="Student Details"
+                            android:textColor="@android:color/white"
+                            android:textSize="35sp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:layout_marginTop="10dp"
-                    app:cardElevation="5dp"
-                    app:cardCornerRadius="3dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="5dp">
+
                     <LinearLayout
-                        android:padding="10dp"
-                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
                         <LinearLayout
-                            android:layout_marginTop="20dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
 
                             <TextView
 
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Name : "
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
+
                             <TextView
                                 android:id="@+id/student_deatils_name"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
-                                android:textColor="@android:color/background_dark"                            />
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20dp" />
 
                         </LinearLayout>
 
@@ -93,17 +96,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Institution: "
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
+
                             <TextView
                                 android:id="@+id/student_deatils_institution"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
 
                         </LinearLayout>
 
@@ -117,17 +119,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Department: "
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
+
                             <TextView
                                 android:id="@+id/student_deatils_dept"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
 
                         </LinearLayout>
 
@@ -141,17 +142,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Registration: "
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
+
                             <TextView
                                 android:id="@+id/student_deatils_reg"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
 
                         </LinearLayout>
 
@@ -165,15 +165,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Email: "
-                                android:textSize="20dp"
-                                android:textColor="@android:color/background_dark"                            />
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20dp" />
+
                             <TextView
                                 android:id="@+id/student_deatils_email"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
-                                android:textColor="@android:color/background_dark"                            />
+                                android:textColor="@android:color/background_dark"
+                                android:textSize="20dp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -185,17 +186,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Phone:  "
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
-                                />
+                                android:textSize="20dp" />
 
                             <TextView
                                 android:id="@+id/student_deatils_phone"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
-                                android:textSize="20dp"
                                 android:textColor="@android:color/background_dark"
+                                android:textSize="20dp"
 
                                 />
                         </LinearLayout>
@@ -204,18 +204,22 @@
 
             </LinearLayout>
         </RelativeLayout>
-        <RelativeLayout
-            android:padding="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
 
-            <android.support.v7.widget.RecyclerView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+            <RelativeLayout
+                android:padding="20dp"
                 android:layout_width="match_parent"
-                android:id="@+id/detail_list"
-                tools:listitem="@layout/project"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/main_detail_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/project" />
+            </RelativeLayout>
+        </ScrollView>
 
-        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>

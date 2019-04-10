@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private MaterialSearchView materialSearchView;
     private Button mOpenButton;
     private Button mSignUp;
+    private Button mSignIn;
+    private Button mSingOut;
     private Button mSubmitWork;
     private TextView mTeachers;
     private TextView mStudents;
@@ -48,13 +50,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
+        prefConfig=new PrefConfig(this);
+
         mTeachers=findViewById(R.id.teachers);
         mStudents=findViewById(R.id.students);
         mProjects=findViewById(R.id.projects);
+        mSignUp=findViewById(R.id.main_signup_btn);
+        mSignIn=findViewById(R.id.main_signin_btn);
+        mSingOut=findViewById(R.id.main_signout_btn);
         materialSearchView=findViewById(R.id.search_view);
         mOpenButton=findViewById(R.id.buttonId);
         mScrollView=findViewById(R.id.scroll);
         mSubmitWork=findViewById(R.id.submit_work);
+
+        if(prefConfig.readLoginStatus()){
+            if(!prefConfig.readUser().equals("teachers")){
+                mSubmitWork.setVisibility(View.VISIBLE);
+            }
+            mSingOut.setVisibility(View.VISIBLE);
+            mSignIn.setVisibility(View.GONE);
+            mSignUp.setVisibility(View.GONE);
+        }else {
+
+            mSubmitWork.setVisibility(View.GONE);
+            mSingOut.setVisibility(View.GONE);
+            mSignIn.setVisibility(View.VISIBLE);
+            mSignUp.setVisibility(View.VISIBLE);
+        }
+
         mSubmitWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,16 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
-        prefConfig=new PrefConfig(this);
-
         intiName();
-
-
-
-
-
-
     }
 
     private void getName(final String type){
@@ -102,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mTeachers.setTextColor(Color.RED);
-                mProjects.setTextColor(Color.BLACK);
-                mStudents.setTextColor(Color.BLACK);
+                mProjects.setTextColor(Color.WHITE);
+                mStudents.setTextColor(Color.WHITE);
                 materialSearchView.clearAll();
                 materialSearchView.clearHistory();
                 materialSearchView.openSearch();
@@ -114,8 +129,8 @@ public class MainActivity extends AppCompatActivity {
         mStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTeachers.setTextColor(Color.BLACK);
-                mProjects.setTextColor(Color.BLACK);
+                mTeachers.setTextColor(Color.WHITE);
+                mProjects.setTextColor(Color.WHITE);
                 mStudents.setTextColor(Color.RED);
                 materialSearchView.clearAll();
                 materialSearchView.clearHistory();
@@ -127,9 +142,17 @@ public class MainActivity extends AppCompatActivity {
         mProjects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTeachers.setTextColor(Color.BLACK);
+                mTeachers.setTextColor(Color.WHITE);
                 mProjects.setTextColor(Color.RED);
-                mStudents.setTextColor(Color.BLACK);
+                mStudents.setTextColor(Color.WHITE);
+            }
+        });
+
+        mSingOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prefConfig.writeLoginStatus(false);
+                startActivity(new Intent(MainActivity.this,MainActivity.class));
             }
         });
     }
@@ -142,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
             names.add(suggestion.get(i).getName());
         }
 
-
         mSignUp=findViewById(R.id.main_signup_btn);
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         mOpenButton=findViewById(R.id.buttonId);
         mOpenButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.example.projectandthesismanagementsystem.signup;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -71,6 +72,9 @@ public class Teachers_SignUp extends AppCompatActivity {
                         MainActivity.prefConfig.writeUser(response.body().getUser());
                         MainActivity.prefConfig.writeInsti(response.body().getInstitution());
                         MainActivity.prefConfig.writeUserId(response.body().getUserId());
+                        Toast.makeText(Teachers_SignUp.this,"Registered!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Teachers_SignUp.this,MainActivity.class));
+
                     }
                 }
             }

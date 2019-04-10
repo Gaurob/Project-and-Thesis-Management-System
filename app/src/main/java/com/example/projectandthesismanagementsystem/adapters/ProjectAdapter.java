@@ -9,19 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.projectandthesismanagementsystem.ProjectDetailsActivity;
 import com.example.projectandthesismanagementsystem.R;
 import com.example.projectandthesismanagementsystem.models.Project;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHolder> {
 
-    ArrayList<Project>myList;
+    List<Project> myList;
     Context context;
 
-    public ProjectAdapter(ArrayList<Project> myList, Context context) {
+    public ProjectAdapter(List<Project> myList, Context context) {
         this.myList = myList;
         this.context = context;
     }
@@ -29,12 +32,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.project,viewGroup,false);
+        View view= LayoutInflater.from(context).inflate(R.layout.project,viewGroup,false);
+        Toast.makeText(context,"SSSS",Toast.LENGTH_LONG).show();
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
 
         myViewHolder.project_name.setText(myList.get(i).getTitle());
         myViewHolder.student_name.setText(myList.get(i).getStudentName());
@@ -42,16 +46,15 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHo
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context.getApplicationContext(), ProjectDetailsActivity.class);
+                intent.putExtra(context.getString(R.string.EXTRA_PROJECT),  myList.get(i));
                 context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return myList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
