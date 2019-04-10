@@ -15,7 +15,7 @@ $response=array();
 
 $sql_project="UPDATE projects
 				SET first_seg = $first_seg, second_seg=$second_seg, third_seg=$third_seg, accepted= $accepted, project_comment='$project_comment'
-				where P_ID = $project_id;";
+ 				where P_ID = $project_id;";
 
 if(mysqli_query($connection,$sql_project)){
  $status="ok";

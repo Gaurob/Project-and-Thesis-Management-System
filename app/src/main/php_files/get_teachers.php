@@ -5,7 +5,7 @@ require "init.php";
 
 $type=$_GET['type'];
 
-	
+
 $sql_query_teachers="SELECT name,T_ID FROM teachers";
 $sql_query_students="SELECT name FROM students";
 $sql_query="SELECT name FROM teachers";
