@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class Details extends AppCompatActivity {
     private TextView mPhone;
     private TextView mType;
     private User mUser;
+    private LinearLayout mRegLay;
 
     ProgressDialog mProgressDialog;
 
@@ -37,6 +39,7 @@ public class Details extends AppCompatActivity {
         mEmail=findViewById(R.id.student_deatils_email);
         mPhone=findViewById(R.id.student_deatils_phone);
         mType=findViewById(R.id.Student_details_type);
+        mRegLay=findViewById(R.id.reg_layout);
         mProgressDialog=new ProgressDialog(this);
         mProgressDialog.setMessage("Loading...");
         mProgressDialog.setCanceledOnTouchOutside(false);
@@ -51,7 +54,8 @@ public class Details extends AppCompatActivity {
         }
         else if(type.equals("Teachers")){
             mType.setText("Teacher Details");
-            mReg.setVisibility(View.GONE);
+            mRegLay.setVisibility(View.GONE);
+            getContents(type,name);
             mProgressDialog.show();
         }
 
@@ -86,7 +90,7 @@ public class Details extends AppCompatActivity {
         mInstitution.setText(mUser.getInstitution());
         mDept.setText(mUser.getDepartment());
         if(type.equals("Students")){
-            mReg.setVisibility(View.VISIBLE);
+            mRegLay.setVisibility(View.VISIBLE);
             mReg.setText(mUser.getReg());
         }
         mEmail.setText(mUser.getEmail());
