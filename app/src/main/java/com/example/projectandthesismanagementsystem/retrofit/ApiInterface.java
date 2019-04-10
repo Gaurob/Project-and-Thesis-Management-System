@@ -1,6 +1,7 @@
 package com.example.projectandthesismanagementsystem.retrofit;
 
 import com.example.projectandthesismanagementsystem.models.Name;
+import com.example.projectandthesismanagementsystem.models.Project;
 import com.example.projectandthesismanagementsystem.models.User;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public interface ApiInterface {
 
     @GET("get_teacher.php")
     Call<User> getUserDetails(@Query("name") String name,@Query("type") String type);
+
+    @GET("get_teachers.php")
+    Call<ArrayList<Project>> getProjectList(@Query("type") String type,@Query("user_id") int id);
 
 
 }

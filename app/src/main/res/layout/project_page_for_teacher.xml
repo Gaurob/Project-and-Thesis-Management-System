@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Project Details"
+            android:textSize="35dp"
+            android:textAlignment="center"
+            android:layout_marginTop="14dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name  :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_student_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ashik "
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/name_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/advisor_name_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="advisor :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_advisor_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="enam"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/advisor_name_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_project_title_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/title_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/description_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_description_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/description_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/platform_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platform :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_platform_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/platform_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Technology_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Technology :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_Technology_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/Technology_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/github_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Github ID :"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/project_dtls_Github_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/github_id"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+
+                android:id="@+id/table_row_std_project_dtl"
+                android:layout_marginTop="30dp"
+                >
+                <TextView
+
+                    android:text=" Project Summary :"
+                    android:textSize="25sp"
+                    />
+
+            </TableRow>
+
+         <TableLayout
+             android:orientation="vertical"
+             android:layout_marginTop="10dp">
+
+             <TableRow>
+
+                 <TextView
+                    android:text="accepted"
+                     android:textSize="24sp"
+                     />
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:text="1st"
+                     android:textSize="24sp"
+                     />
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:text="2nd"
+                     android:textSize="24sp"
+                     />
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:text="3rd"
+                     android:textSize="24sp"
+                     />
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:text="Final"
+                     android:textSize="24sp"
+                     />
+                 <TextView
+                     android:layout_marginLeft="10dp"
+                     android:text="Comment"
+                     android:textSize="24sp"
+                     />
+
+             </TableRow>
+
+             <TableRow>
+
+                 <RadioButton
+                     android:id="@+id/Accepted_radio_button"
+                     android:layout_width="94dp"
+                     android:layout_marginLeft="40dp"/>
+                 <RadioButton
+                     android:id="@+id/first_Accept_id"
+                     android:layout_marginLeft="12dp"
+                     />
+                 <RadioButton
+                     android:id="@+id/second_Accept_id"
+                     android:layout_marginLeft="12dp"
+                     />
+                 <RadioButton
+                     android:id="@+id/third_Accept_id"
+                     android:layout_marginLeft="12dp"
+                     />
+                 <RadioButton
+                     android:id="@+id/final_Accept_id"
+                     android:layout_marginLeft="12dp"
+                     />
+                 <EditText
+                     android:id="@+id/comment_id"
+                     />
+
+
+             </TableRow>
+
+         </TableLayout>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
